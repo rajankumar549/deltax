@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+  .container
+  .row
+    .searchable-container
+       each movie in data
+        .items.col-xs-12.col-sm-6.col-md-6.col-lg-6.clearfix
+         .info-block.block-info.clearfix
+           .square-box.pull-left
+             span.glyphicon.glyphicon-user.glyphicon-lg
+           h5 #{movie.movie_name}
+           h4 YOR: #{movie.yor}
+           p Plot: #{movie.plot}
+           span Actor: #{movie.actor_list.join()}
+           span Producer: #{movie.producer}
+           a(href='/api/get_movie?movie_id=#{movie.movie_id}') Edit
+
+

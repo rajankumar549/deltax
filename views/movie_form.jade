@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	div.form-group.col-md-8
+		form(action='/api/updat', method='POST')
+			input.form-control#movie_name(type='text', name='movie_name', value='#{data.movie_name}')
+			br
+			input.form-control#movie_id(type='hidden', name='movie_id', value='#{data.movie_id}')
+			br
+			input.form-control#movie_yor(type='text', name='movie_yor', value='#{data.yor}')
+			br
+			input.form-control#movie_plot(type='text', name='movie_plot', value='#{data.plot}')
+			br
+			input.form-control#movie_poster(type='text', name='movie_poster', value='#{data.poster}')
+			br
+			input.form-control#movie_actor(type='text', name='movie_actor', value='#{data.actor_list.join(", ")}')
+			br
+			input.form-control#movie_producer(type='text', name='movie_producer', value='#{data.producer}')
+			br
+			input.form-control(type='submit')
